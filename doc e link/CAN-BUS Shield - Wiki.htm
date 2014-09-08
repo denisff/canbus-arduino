@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>CAN-BUS Shield - Wiki</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.20.3">
+<script src="CAN-BUS%20Shield%20-%20Wiki_files/ga.js" async="" type="text/javascript"></script><script src="CAN-BUS%20Shield%20-%20Wiki_files/cloudflare.js" async=""></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1409899276,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dokv=88e434a982/"},atok:"06ea5f554a141352a810ed8d4482aed9",petok:"311f4156fe3a3dcad8958c207a705233d79defab-1410183342-1800",zone:"seeedstudio.com",rocket:"0",apps:{"ga_key":{"ua":"UA-11009501-1","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dokv=97fb4d042e/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="shortcut icon" href="http://www.seeedstudio.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.seeedstudio.com/wiki/opensearch_desc.php" title="Wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://www.seeedstudio.com/wiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom feed" href="http://www.seeedstudio.com/wiki/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="CAN-BUS%20Shield%20-%20Wiki_files/load.css">
+<style>.fancybox-wrap,.fancybox-skin,.fancybox-outer,.fancybox-inner,.fancybox-image,.fancybox-wrap iframe,.fancybox-wrap object,.fancybox-nav,.fancybox-nav span,.fancybox-tmp{padding:0;margin:0;border:0;outline:none;vertical-align:top}.fancybox-wrap{position:absolute;top:0;left:0;z-index:8020}.fancybox-skin{position:relative;background:#f9f9f9;color:#444;text-shadow:none;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.fancybox-opened{z-index:8030}.fancybox-opened .fancybox-skin{-webkit-box-shadow:0 10px 25px rgba(0,0,0,0.5);-moz-box-shadow:0 10px 25px rgba(0,0,0,0.5);box-shadow:0 10px 25px rgba(0,0,0,0.5)}.fancybox-outer,.fancybox-inner{position:relative}.fancybox-inner{overflow:hidden}.fancybox-type-iframe .fancybox-inner{-webkit-overflow-scrolling:touch}.fancybox-error{color:#444;font:14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;margin:0;padding:15px;white-space:nowrap}.fancybox-image,.fancybox-iframe{display:block;width:100%;height:100%}.fancybox-image{max-width:100%;max-height:100%}#fancybox-loading,.fancybox-close,.fancybox-prev span,.fancybox-next span{background-image:url(http://www.seeedstudio.com/wiki/extensions/FancyBoxThumbs/modules/fancyBox/source/fancybox_sprite.png?2013-11-26T18:31:40Z)}#fancybox-loading{position:fixed;top:50%;left:50%;margin-top:-22px;margin-left:-22px;background-position:0 -108px;opacity:0.8;cursor:pointer;z-index:8060}#fancybox-loading div{width:44px;height:44px;background:url(http://www.seeedstudio.com/wiki/extensions/FancyBoxThumbs/modules/fancyBox/source/fancybox_loading.gif?2013-11-26T18:31:40Z) center center no-repeat}.fancybox-close{position:absolute;top:-18px;right:-18px;width:36px;height:36px;cursor:pointer;z-index:8040}.fancybox-nav{position:absolute;top:0;width:40%;height:100%;cursor:pointer;text-decoration:none;background:transparent url(http://www.seeedstudio.com/wiki/extensions/FancyBoxThumbs/modules/fancyBox/source/blank.gif?2013-11-26T18:31:40Z); -webkit-tap-highlight-color:rgba(0,0,0,0);z-index:8040}.fancybox-prev{left:0}.fancybox-next{right:0}.fancybox-nav span{position:absolute;top:50%;width:36px;height:34px;margin-top:-18px;cursor:pointer;z-index:8040;visibility:hidden}.fancybox-prev span{left:10px;background-position:0 -36px}.fancybox-next span{right:10px;background-position:0 -72px}.fancybox-nav:hover span{visibility:visible}.fancybox-tmp{position:absolute;top:-99999px;left:-99999px;visibility:hidden;max-width:99999px;max-height:99999px;overflow:visible !important} .fancybox-lock{overflow:hidden}.fancybox-overlay{position:absolute;top:0;left:0;overflow:hidden;display:none;z-index:8010;background:url(http://www.seeedstudio.com/wiki/extensions/FancyBoxThumbs/modules/fancyBox/source/fancybox_overlay.png?2013-11-26T18:31:40Z)}.fancybox-overlay-fixed{position:fixed;bottom:0;right:0}.fancybox-lock .fancybox-overlay{overflow:auto;overflow-y:scroll} .fancybox-title{visibility:hidden;font:normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;position:relative;text-shadow:none;z-index:8050}.fancybox-opened .fancybox-title{visibility:visible}.fancybox-title-float-wrap{position:absolute;bottom:0;right:50%;margin-bottom:-35px;z-index:8050;text-align:center}.fancybox-title-float-wrap .child{display:inline-block;margin-right:-100%;padding:2px 20px;background:transparent; background:rgba(0,0,0,0.8);-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px;text-shadow:0 1px 2px #222;color:#FFF;font-weight:bold;line-height:24px;white-space:nowrap}.fancybox-title-outside-wrap{position:relative;margin-top:10px;color:#fff}.fancybox-title-inside-wrap{padding-top:10px}.fancybox-title-over-wrap{position:absolute;bottom:0;left:0;color:#fff;padding:10px;background:#000;background:rgba(0,0,0,.8)}
+/* cache key: seeedc6_wikidb2:resourceloader:filter:minify-css:7:a9fc2cb36b49468af65826887a2453ff */.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: seeedc6_wikidb2:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: seeedc6_wikidb2:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="CAN-BUS%20Shield%20-%20Wiki_files/load_002.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script src="CAN-BUS%20Shield%20-%20Wiki_files/load_004.php"></script><script src="CAN-BUS%20Shield%20-%20Wiki_files/load_006.php"></script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"CAN-BUS_Shield","wgTitle":"CAN-BUS Shield","wgCurRevisionId":97653,"wgArticleId":3958,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"CAN-BUS_Shield","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":true,"previewDialog":false,"publish":true,"toc":false},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,
+"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+/* cache key: seeedc6_wikidb2:resourceloader:filter:minify-js:7:b3e9d3cf8e43ad3f6fbbaa56f87bf00d */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="CAN-BUS%20Shield%20-%20Wiki_files/load_003.php"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--><script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-11009501-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-CAN-BUS_Shield skin-vector action-view vector-animateLayout">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+ 
+<div id="content" class="mw-body">
+<a href="#top" style="position: fixed;z-index: 8;left: 110px;bottom: 20px;cursor: pointer;float: left;">↑<small>TOP</small></a>
+<a id="top"></a>
+<div id="mw-js-message" style="display:none;"></div>
+ 
+<h1 id="firstHeading" class="firstHeading"><span dir="auto">CAN-BUS Shield</span></h1>
+ 
+ 
+<div id="bodyContent">
+ 
+<div id="siteSub">From Wiki 来自痴汉的爱</div>
+ 
+ 
+<div id="contentSub"></div>
+ 
+ 
+<div id="jump-to-nav" class="mw-jump">
+Jump to: <a href="#mw-head">navigation</a>, <a href="#p-search">search</a>
+</div>
+ 
+ 
+<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.seeedstudio.com/wiki/File:Can_bus_shield_all.jpg" class="image fancybox"><img alt="Can bus shield all.jpg" src="CAN-BUS%20Shield%20-%20Wiki_files/400px-Can_bus_shield_all.jpg" class="thumbimage" height="300" width="400"></a> <div class="thumbcaption"><div class="magnify"><a href="http://www.seeedstudio.com/wiki/File:Can_bus_shield_all.jpg" class="internal" title="Enlarge"><img src="CAN-BUS%20Shield%20-%20Wiki_files/magnify-clip.png" alt="" height="11" width="15"></a></div></div></div></div>
+<p>[<a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/index.php?title=CAN-BUS_Shield_%E6%8B%93%E5%B1%95%E6%9D%BF&amp;uselang=zh">中文</a>]
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Specifications"><span class="tocnumber">2</span> <span class="toctext">Specifications</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Demonstration"><span class="tocnumber">3</span> <span class="toctext">Demonstration</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Reference"><span class="tocnumber">4</span> <span class="toctext">Reference</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#1._Set_the_BaudRate"><span class="tocnumber">4.1</span> <span class="toctext">1. Set the BaudRate</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#2._Set_Receive_Mask_and_Filter"><span class="tocnumber">4.2</span> <span class="toctext">2. Set Receive Mask and Filter</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#3._Check_Receive"><span class="tocnumber">4.3</span> <span class="toctext">3. Check Receive</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#4._Get_CAN_ID"><span class="tocnumber">4.4</span> <span class="toctext">4. Get CAN ID</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#5._Send_Data"><span class="tocnumber">4.5</span> <span class="toctext">5. Send Data</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#6._Receive_Data"><span class="tocnumber">4.6</span> <span class="toctext">6. Receive Data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#FAQ"><span class="tocnumber">5</span> <span class="toctext">FAQ</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#How_to_Change_SS_Pin"><span class="tocnumber">5.1</span> <span class="toctext">How to Change SS Pin</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#How_to_Compatible_With_Arduino_Mega_and_Leonardo"><span class="tocnumber">5.2</span> <span class="toctext">How to Compatible With Arduino Mega and Leonardo</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#How_to_remove_the_terminal_resistor"><span class="tocnumber">5.3</span> <span class="toctext">How to remove the terminal resistor</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Resources"><span class="tocnumber">6</span> <span class="toctext">Resources</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<p>CAN-BUS is a common industrial bus because of its long travel 
+distance, medium communication speed and high reliability. It is 
+commonly found on modern machine tools and as an automotive diagnostic 
+bus. This CAN-BUS Shield adopts MCP2515 CAN Bus controller with SPI 
+interface and MCP2551 CAN transceiver to give your Arduino/Seeeduino 
+CAN-BUS capibility. With an OBD-II converter cable added on and the 
+OBD-II library imported, you are ready to build an onboard diagnostic 
+device or data logger.
+</p>
+<ul><li>Implements CAN V2.0B at up to 1 Mb/s
+</li><li>SPI Interface up to 10 MHz
+</li><li>Standard (11 bit) and extended (29 bit) data and remote frames
+</li><li>Two receive buffers with prioritized message storage
+</li><li>Industrial standard 9 pin sub-D connector
+</li><li>Two LED indicators
+</li></ul>
+<p><br>
+<i><b>Note:The Library had been update to version 1.2 in July 8,2014</b></i>
+</p><p><br>
+<br>
+</p>
+<h2> <span class="mw-headline" id="Specifications"> Specifications </span></h2>
+<p>Voltage：5V<br>
+Dimensions： 68x53mm<br>
+Net Weight：50g<br>
+</p><p><a href="http://www.seeedstudio.com/wiki/File:Canbus_interface.jpg" class="image fancybox"><img alt="Canbus interface.jpg" src="CAN-BUS%20Shield%20-%20Wiki_files/Canbus_interface.jpg" height="260" width="747"></a><br>
+</p><p><br>
+</p><p><b>Note:</b>
+</p><p><i><b>When you use more than two CAN Bus Shield in one net, you should concern about the impedance.</b></i>
+</p><p><i><b>You can just cut P1 in the PCB with a knife, or just remove R3 on the PCB.</b></i>
+</p><p><br>
+<br>
+</p>
+<h2> <span class="mw-headline" id="Demonstration"> Demonstration </span></h2>
+<p><a href="http://www.seeedstudio.com/wiki/File:Can_bus_shield_connect.jpg" class="image fancybox"><img alt="Can bus shield connect.jpg" src="CAN-BUS%20Shield%20-%20Wiki_files/Can_bus_shield_connect.jpg" height="513" width="700"></a>
+</p><p>1. Download the <a rel="nofollow" target="_blank" class="external text" href="https://github.com/Seeed-Studio/CAN_BUS_Shield">CAN-BUS Source code file for Arduino 1.0</a> and release it in the libraries file in the Arduino-1.0 program.: ..\arduino-1.0\libraries.
+</p><p>If the folder name include "-master", just remove it.
+</p><p>2. Open the Arduino-1.0, and you will find 3 examples: 
+receive_check ,send and receive_interrupt. Here we'll use send and 
+receive_check, open it then you should get two programming windows now.
+</p><p><a href="http://www.seeedstudio.com/wiki/File:Open_CAN_BUS_examples.jpg" class="image fancybox"><img alt="Open CAN BUS examples.jpg" src="CAN-BUS%20Shield%20-%20Wiki_files/400px-Open_CAN_BUS_examples.jpg" height="421" width="400"></a>
+</p><p>3. Upload two examples to two boards separately. Choose the board
+ via the path: Tools --&gt;Serial Port--&gt;COMX. Note down which board 
+is assigned as a "send" node and which board is assigned as a "receive" 
+node.
+</p><p>4. Open the "Serial Monitor" on the "receive" COM, you will get 
+message sent from the "send" node. Here we have the preset message "0 1 2
+ 3 4 5 6 7" showing in the following picture.
+</p><p><a href="http://www.seeedstudio.com/wiki/File:CAN_BUS_message.jpg" class="image fancybox"><img alt="CAN BUS message.jpg" src="CAN-BUS%20Shield%20-%20Wiki_files/400px-CAN_BUS_message.jpg" height="350" width="400"></a>
+</p><p><br>
+</p><p><br>
+</p><p><br>
+</p>
+<h2> <span class="mw-headline" id="Reference"> Reference </span></h2>
+<h3> <span class="mw-headline" id="1._Set_the_BaudRate">1. Set the BaudRate</span></h3>
+<p>This function is used to initialize the baudrate of the CAN Bus system.
+</p><p>The available baudrates are listed as follws:
+</p><p>CAN_5KBPS, CAN_10KBPS, CAN_20KBPS, CAN_40KBPS, CAN_50KBPS, 
+CAN_80KBPS, CAN_100KBPS, CAN_125KBPS, CAN_200KBPS, CAN_250KBPS, 
+CAN_500KBPS and CAN_1000KBPS
+</p>
+<h3> <span class="mw-headline" id="2._Set_Receive_Mask_and_Filter">2. Set Receive Mask and Filter</span></h3>
+<p>There are 2 receive mask registers and 5 filter registers on the 
+controller chip that guarantee you get data from the target device. They
+ are useful especially in a large network consisting of numerous nodes.
+</p><p>We provide two functions for you to utilize these mask and filter registers. They are:
+</p><p><i>init_Mask(unsigned char num, unsigned char ext, unsigned char ulData);</i> &amp; <i>init_Filt(unsigned char num, unsigned char ext, unsigned char ulData);</i>
+</p><p><i>"num"</i> represents which register to use. You can fill 0 or 1 for mask and 0 to 5 for filter.
+</p><p><i>"ext"</i> represents the status of the frame. 0 means it's a mask or filter for a standard frame. 1 means it's for a extended frame.
+</p><p><i>"ulData" </i>represents the content of the mask of filter.
+</p>
+<h3> <span class="mw-headline" id="3._Check_Receive">3. Check Receive</span></h3>
+<p>The MCP2515 can operate in either a polled mode, where the software 
+checks for a received frame, or using additional pins to signal that a 
+frame has been received or transmit completed. Use the following 
+function to poll for received frames.
+</p><p><i>INT8U MCP_CAN::checkReceive(void);</i>
+</p><p>The function will return 1 if a frame arrives, and 0 if nothing arrives.
+</p>
+<h3> <span class="mw-headline" id="4._Get_CAN_ID">4. Get CAN ID</span></h3>
+<p>When some data arrive, you can use the following function to get the CAN ID of the "send" node.
+</p><p><i>INT32U MCP_CAN::getCanId(void)</i>
+</p>
+<h3> <span class="mw-headline" id="5._Send_Data">5. Send Data</span></h3>
+<p><i>CAN.sendMsgBuf(INT8U id, INT8U ext, INT8U len, data_buf);</i>
+</p><p>is a function to send data onto the bus. In which:
+</p><p><i>"id"</i> represents where the data come from.
+</p><p><i>"ext"</i> represents the status of the frame. '0' means standard frame. '1' means extended frame.
+</p><p><i>"len"</i> represents the length of this frame.
+</p><p><i>"data_buf"</i> is the content of this message.
+</p><p>For example, In the 'send' example, we have:
+</p>
+<pre>  
+unsigned char stmp[8] = {0, 1, 2, 3, 4, 5, 6, 7};
+
+CAN.sendMsgBuf(0x00, 0, 8, stmp); //send out the message 'stmp' to the bus and tell other devices this is a standard frame from 0x00.
+</pre>
+<h3> <span class="mw-headline" id="6._Receive_Data">6. Receive Data</span></h3>
+<p>The following function is used to receive data on the 'receive' node:
+</p><p><i>CAN.readMsgBuf(unsigned char len, unsigned char buf);</i>
+</p><p>In conditions that masks and filters have been set. This function
+ can only get frames that meet the requirements of masks and filters.
+</p><p><i>"len"</i> represents the data length.
+</p><p><i>"buf"</i> is where you store the data.
+</p><p><br>
+</p><p><br>
+<br>
+</p>
+<h2> <span class="mw-headline" id="FAQ"> FAQ </span></h2>
+<h3> <span class="mw-headline" id="How_to_Change_SS_Pin"> How to Change SS Pin </span></h3>
+<p>The SPI SS pin is default D10, you can change it to D9 easily.
+</p><p>Firstly, cut off the copper wire between CS and digital 10 via a knife, then do some soldering just like the following image
+</p><p><br>
+<a href="http://www.seeedstudio.com/wiki/File:CAN_BUS_CHANGE_CS.png" class="image fancybox"><img alt="CAN BUS CHANGE CS.png" src="CAN-BUS%20Shield%20-%20Wiki_files/600px-CAN_BUS_CHANGE_CS.png" height="453" width="600"></a>
+</p><p>Then, you need to change the SS Pin in the library.
+</p><p>You can refer to <a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/forum/viewtopic.php?f=23&amp;t=5231">here</a>
+</p><p><br>
+</p>
+<h3> <span class="mw-headline" id="How_to_Compatible_With_Arduino_Mega_and_Leonardo"> How to Compatible With Arduino Mega and Leonardo </span></h3>
+<p>In the old version(this bug had been fixed on version 1.1) of CAN BUS
+ Shield, SPI pin only connect to D11~D13. For Arduino UNO(Seeeduino), it
+ works fine.
+</p><p>But for Mega and Leonardo, it doesn't work, because SPI pin of those board was no D11~D12, so you need to so some hack.
+</p><p>Just as following:
+</p><p><br>
+<a href="http://www.seeedstudio.com/wiki/File:CAN_BUS_SHIELD_MEGA.JPG" class="image fancybox"><img alt="CAN BUS SHIELD MEGA.JPG" src="CAN-BUS%20Shield%20-%20Wiki_files/600px-CAN_BUS_SHIELD_MEGA.JPG" height="450" width="600"></a>
+</p><p>More details refer to <a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/forum/viewtopic.php?f=23&amp;t=5172">here</a>
+</p><p>Good news is that a new version of CAN BUS Shield will come soon,
+ the SPI pin will connect to ICSP, it can easily compatible with 
+Mega(Leonardo).
+</p>
+<h3> <span class="mw-headline" id="How_to_remove_the_terminal_resistor"> How to remove the terminal resistor </span></h3>
+<p>There's a 62 Ohm(120 Ohm in version 1.1 hardware) on CAN BUS Shield. 
+Sometime it's not need. You can remove it easily, just as follow:
+</p><p><br>
+<a href="http://www.seeedstudio.com/wiki/File:Can_bus_shield_cut_p1.JPG" class="image fancybox"><img alt="Can bus shield cut p1.JPG" src="CAN-BUS%20Shield%20-%20Wiki_files/600px-Can_bus_shield_cut_p1.JPG" height="450" width="600"></a>
+<br>
+</p>
+<h2> <span class="mw-headline" id="Resources"> Resources </span></h2>
+<ul><li><a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/images/7/78/CAN-BUS_Shield_v0.9b.pdf">CAN-BUS Shield Schematic.pdf</a>
+</li><li><a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/images/7/75/CAN-BUS_Shield_v0.9b_20120621.zip">CAN-BUS Shield eagle file</a>
+</li><li><a rel="nofollow" target="_blank" class="external text" href="https://github.com/Seeed-Studio/CAN_BUS_Shield">CAN-BUS Source code file for Arduino 1.0</a>
+</li><li><a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/images/8/83/MCP2515.pdf">MCP2515 datasheet</a>
+</li><li><a rel="nofollow" target="_blank" class="external text" href="http://www.seeedstudio.com/wiki/images/8/8c/Mcp2551en.pdf">MCP2551 datasheet</a><br>
+</li></ul>
+ 
+</div>  
+ 
+<div class="printfooter">
+Retrieved from "<a href="http://www.seeedstudio.com/wiki/index.php?title=CAN-BUS_Shield&amp;oldid=97653">http://www.seeedstudio.com/wiki/index.php?title=CAN-BUS_Shield&amp;oldid=97653</a>" </div>
+ 
+ 
+<div id="catlinks" class="catlinks catlinks-allhidden"></div>  
+<div class="visualClear"></div>
+ 
+ 
+</div>
+ 
+</div>
+ 
+ 
+<div id="mw-head" class="noprint">
+ 
+<div id="p-personal" class="">
+<h5>Personal tools</h5>
+<ul>
+<li id="pt-anonuserpage"><a href="http://www.seeedstudio.com/wiki/User:158.102.162.22" class="new" title="The user page for the IP address you are editing as [alt-shift-.]" accesskey=".">158.102.162.22</a></li>
+<li id="pt-anontalk"><a href="http://www.seeedstudio.com/wiki/User_talk:158.102.162.22" class="new" title="FAQ about edits from this IP address [alt-shift-n]" accesskey="n">Talk for this IP address</a></li>
+<li id="pt-createaccount"><a href="http://www.seeedstudio.com/wiki/index.php?title=Special:UserLogin&amp;returnto=CAN-BUS+Shield&amp;type=signup">Create account</a></li>
+<li id="pt-anonlogin"><a href="http://www.seeedstudio.com/wiki/index.php?title=Special:UserLogin&amp;returnto=CAN-BUS+Shield" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li>
+</ul>
+</div>
+ 
+<div id="left-navigation">
+ 
+<div id="p-namespaces" class="vectorTabs">
+<h5>Namespaces</h5>
+<ul>
+<li id="ca-nstab-main" class="selected"><span><a href="http://www.seeedstudio.com/wiki/CAN-BUS_Shield" title="View the content page [alt-shift-c]" accesskey="c">Page</a></span></li>
+<li id="ca-talk"><span><a href="http://www.seeedstudio.com/wiki/Talk:CAN-BUS_Shield" title="FAQ about the content page [alt-shift-t]" accesskey="t">FAQ</a></span></li>
+<a href="http://www.seeedstudio.com/wiki/Talk:CAN-BUS_Shield">
+<span id="faq_link" style="position:fixed;z-index:8;right:0;top:50%;cursor:pointer;float:right;height:110px;width:40px;background-image: url(/wiki/skins/common/images/FAQ.png);background-repeat:no-repeat;background-position:0px 0px;" title="FAQ" onmouseout="style.width='40px'" onmouseover="style.width='124px'"></span></a>
+</ul>
+</div>
+ 
+ 
+<div id="p-variants" class="vectorMenu emptyPortlet">
+<h4>
+</h4>
+<h5><span>Variants</span><a href="#"></a></h5>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+ 
+</div>
+<div id="right-navigation">
+ 
+<div id="p-views" class="vectorTabs">
+<h5>Views</h5>
+<ul>
+<li id="ca-view" class="selected"><span><a href="http://www.seeedstudio.com/wiki/CAN-BUS_Shield">Read</a></span></li>
+<li id="ca-viewsource"><span><a href="http://www.seeedstudio.com/wiki/index.php?title=CAN-BUS_Shield&amp;action=edit" title="This page is protected.
+You can view its source [alt-shift-e]" accesskey="e">View source</a></span></li>
+<li id="ca-history" class="collapsible"><span><a href="http://www.seeedstudio.com/wiki/index.php?title=CAN-BUS_Shield&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+</ul>
+</div>
+ 
+ 
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+<h5><span>Actions</span><a href="#"></a></h5>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+ 
+ 
+<div id="p-search">
+<h5><label for="searchInput">Search</label></h5>
+<form action="/wiki/index.php" id="searchform">
+<div>
+<input placeholder="Search" autocomplete="off" name="search" title="Search Wiki [alt-shift-f]" accesskey="f" id="searchInput" type="search"> <input name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" type="submit"> <input name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" type="submit"> <input name="title" value="Special:Search" type="hidden">
+</div>
+</form>
+</div>
+ 
+</div>
+</div>
+ 
+ 
+<div id="mw-panel" class="noprint">
+ 
+<div id="p-logo"><a style="background-image: url(/wiki/skins/common/images/logo.png);" href="http://www.seeedstudio.com/wiki/Main_Page" title="Visit the main page"></a></div>
+ 
+ 
+<div class="portal" id="p-navigation">
+<h5>Navigation</h5>
+<div class="body">
+<ul>
+<li id="n-Getting-Started"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Getting_Started">Getting Started</a></li>
+<li id="n-Learning-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Learning">Learning</a></li>
+<li id="n-Product"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Product">Product</a></li>
+<li id="n-Arduino-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Arduino">&nbsp;&nbsp;&nbsp;&nbsp;Arduino</a></li>
+<li id="n-Shield-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Shield">&nbsp;&nbsp;&nbsp;&nbsp;Shield</a></li>
+<li id="n-Grove-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Grove">&nbsp;&nbsp;&nbsp;&nbsp;Grove</a></li>
+<li id="n-Kit-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Kit">&nbsp;&nbsp;&nbsp;&nbsp;Kit</a></li>
+<li id="n-Kit-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Xadow">&nbsp;&nbsp;&nbsp;&nbsp;Xadow</a></li>
+<li id="n-Kit-Nav"><a href="http://www.seeedstudio.com/wiki/index.php?title=Main_Page#Mbed">&nbsp;&nbsp;&nbsp;&nbsp;Mbed</a></li>
+</ul>
+</div>
+</div>
+<div class="portal" id="p-Support-Nav">
+<h5>Support</h5>
+<div class="body">
+<ul>
+<li id="n-Forum"><a href="http://www.seeedstudio.com/forum" rel="nofollow">Forum</a></li>
+<li id="n-Wish"><a href="http://www.seeedstudio.com/wish" rel="nofollow">Wish</a></li>
+<li id="n-SeeedStudio-Nav"><a href="http://www.seeedstudio.com/depot" rel="nofollow">SeeedStudio</a></li>
+<li id="n-Taobao-Nav"><a href="http://xidikaiyuanshuma.tmall.com/" rel="nofollow">Taobao</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+ 
+ 
+<div class="portal" id="p-navigation">
+<h5>Navigation</h5>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a href="http://www.seeedstudio.com/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+<li id="n-randompage"><a href="http://www.seeedstudio.com/wiki/Special:Random" title="Load a random page [alt-shift-x]" accesskey="x">Random page</a></li>
+<li id="n-recentchanges"><a href="http://www.seeedstudio.com/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+<div class="portal" id="p-Collections">
+<h5>Collections</h5>
+<div class="body">
+<ul>
+<li id="n-Motor"><a href="http://www.seeedstudio.com/wiki/Category:Motors">Motor</a></li>
+<li id="n-Arduino"><a href="http://www.seeedstudio.com/wiki/Category:Arduino">Arduino</a></li>
+<li id="n-Grove"><a href="http://www.seeedstudio.com/wiki/Category:Grove">Grove</a></li>
+<li id="n-Shield"><a href="http://www.seeedstudio.com/wiki/Category:Shield">Shield</a></li>
+<li id="n-Kit"><a href="http://www.seeedstudio.com/wiki/Category:Kit">Kit</a></li>
+<li id="n-Xadow"><a href="http://www.seeedstudio.com/wiki/Category:Xadow">Xadow</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+<div class="portal" id="p-tb">
+<h5>Toolbox</h5>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a href="http://www.seeedstudio.com/wiki/Special:WhatLinksHere/CAN-BUS_Shield" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+<li id="t-recentchangeslinked"><a href="http://www.seeedstudio.com/wiki/Special:RecentChangesLinked/CAN-BUS_Shield" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://www.seeedstudio.com/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+<li id="t-print"><a href="http://www.seeedstudio.com/wiki/index.php?title=CAN-BUS_Shield&amp;printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>
+<li id="t-permalink"><a href="http://www.seeedstudio.com/wiki/index.php?title=CAN-BUS_Shield&amp;oldid=97653" title="Permanent link to this revision of the page">Permanent link</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+ 
+</div>
+ 
+ 
+<div id="footer">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last modified on 8 July 2014, at 06:30.</li>
+<li id="footer-info-viewcount">This page has been accessed 84,846 times.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-about"><a href="http://www.seeedstudio.com/wiki/Wiki:About" title="Wiki:About">About Wiki</a></li>
+<li id="footer-places-disclaimer"><a href="http://www.seeedstudio.com/wiki/Wiki:General_disclaimer" title="Wiki:General disclaimer">Seeed Studio</a></li>
+</ul>
+<ul id="footer-icons" class="noprint">
+<li id="footer-poweredbyico">
+<a href="http://www.mediawiki.org/"><img src="CAN-BUS%20Shield%20-%20Wiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a>
+</li>
+</ul>
+<div style="clear:both"></div>
+</div>
+ 
+<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="CAN-BUS%20Shield%20-%20Wiki_files/load.php"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","ext.FancyBoxThumbs"], null, true);
+}</script><script type="text/javascript" src="CAN-BUS%20Shield%20-%20Wiki_files/load_005.php"></script>
+<script>
+var fbtFancyBoxOptions = {"openEffect":"elastic","closeEffect":"elastic","helpers":{"title":{"type":"inside"}}};
+</script>
+<script src="CAN-BUS%20Shield%20-%20Wiki_files/load_002.php"></script>
+ <script type="text/javascript">/* CloudFlare analytics upgrade */
+</script>
+
+
+<div class="suggestions" style="display: none; font-size: 13.3333px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
